@@ -25,18 +25,18 @@ const App = () => {
   const dispatch = useDispatch();
 
   const onSubmit = (name, number) => {
-    const newData = {
-      id: nanoid(),
-      name,
-      number,
-    };
-
     if (contacts.some(el => el.name === name)) {
       alert(`${name} is alredy in contacts`);
       return;
     }
 
-    dispatch(addPhone(newData));
+    dispatch(
+      addPhone({
+        id: nanoid(),
+        name,
+        number,
+      })
+    );
   };
 
   const onClickDelete = event => {
@@ -54,7 +54,6 @@ const App = () => {
   };
 
   const filtredContacts = () => {
-    // console.log(contacts);
     return contacts.filter(el =>
       el.name.toLowerCase().includes(filter.toLowerCase())
     );
