@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { nanoid } from 'nanoid';
 
 const init = [
   { id: 'S0V2NE44z1i733lO3c7Ic', name: 'Вячеслав', number: '654564' },
